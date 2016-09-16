@@ -8,13 +8,23 @@ var app = {
   onDeviceReady: function() {
     console.log("Dispositivo preparado");
     $("#btnfoto").click(function(event) {
-      //disparo la alarma
+      //disparo la camara
 
-
-      
+      //  navigator.camera.getPicture(cameraSuccess, cameraError,{ quality: 50,
+      //destinationType: Camera.DestinationType.FILE_URI });
+      alert("Antes");
+      navigator.camera.getPicture(cameraSuccess, cameraError, {});
     });
-
-  },
+  };
 };
 
+
+
+function cameraSuccess() {
+  alert("Camara funciona");
+}
+
+function cameraError() {
+  alert("Camara ERROR");
+}
 app.initialize();
